@@ -17,6 +17,9 @@ Python 3.8.2 (default, Apr 13 2020, 16:24:13)
 
 ## 実行時間
 
+
+実行コマンド
+
 ```bash
 time python ~~.py
 ```
