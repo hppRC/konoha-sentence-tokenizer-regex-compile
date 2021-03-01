@@ -62,8 +62,9 @@ DOCUMENT = """
 
 def main():
     tokenizer = SentenceTokenizer()
+    expected = ["私は猫である。", "にゃお。", "にゃにゃ", "わんわん。", "にゃーにゃー。"]
     for _ in range(100_000):
-        _ = tokenizer.tokenize(DOCUMENT)
+        assert expected == tokenizer.tokenize(DOCUMENT)
 
 
 if __name__ == "__main__":
