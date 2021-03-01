@@ -15,14 +15,27 @@ Python 3.8.2 (default, Apr 13 2020, 16:24:13)
 [Clang 11.0.3 (clang-1103.0.32.29)] on darwin
 ```
 
-## 実行時間
+## 評価方法
+
+for文で100,000回文の改行区切りを行う。
+評価対象は以下の通り。
+
+- do_nothing: オーバーヘッドの確認のため、ループを回すだけのスクリプト
+- compile_alwasy: SentenceTokenizer#tokenize()が呼ばれるたびにコンパイルを行う
+- no_compile: コンパイルをせず、raw文字列を渡す
+- pre_compile: 事前にコンパイル済みの正規表現オブジェクトを格納しておく
 
 
 実行コマンド
 
 ```bash
-time python ~~.py
+time python do_nothing.py
+time python compile_always.py
+time python no_compile.py
+time python pre_compile.py
 ```
+
+## 実行時間
 
 ### do_nothing
 
